@@ -132,10 +132,24 @@ export interface BlogPost {
 
 // ... (các kiểu dữ liệu khác)
 
+export interface Page {
+  title: string;
+  content: string;
+  featuredImage?: {
+    node?: {
+      sourceUrl?: string;
+    }
+  }
+}
+
 export interface BannerProps {
   title?: string;        // Tiêu đề của banner (tùy chọn)
   slogan?: string;       // Slogan của banner (tùy chọn)
   buttonText?: string;   // Nội dung của nút (tùy chọn)
   buttonLink?: string;   // Đường dẫn của nút (tùy chọn)
   imageUrl?: string;     // Đường dẫn đến ảnh banner (tùy chọn)
+}
+export interface AboutSectionProps {
+  content: string; // Nội dung HTML của phần giới thiệu
+  imageUrl: string; // Đường dẫn đến hình ảnh minh họa
 }
