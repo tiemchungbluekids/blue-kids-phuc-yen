@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, FormEvent } from 'react';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 

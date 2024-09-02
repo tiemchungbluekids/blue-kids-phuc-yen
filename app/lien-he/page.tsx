@@ -1,14 +1,13 @@
 // app/lien-he/page.tsx
 
-'use client';
 import ContactForm from '@/components/ContactForm';
 import MapEmbed from '@/components/MapEmbed';
 import { Metadata } from 'next';
 
-// export const metadata: Metadata = {
-//   title: 'Liên hệ - Blue Kids Phúc Yên',
-//   description: 'Liên hệ với chúng tôi để được tư vấn và hỗ trợ về các dịch vụ tiêm chủng và chăm sóc sức khỏe cho trẻ.',
-// };
+export const metadata: Metadata = {
+    title: 'Liên hệ - Trung tâm Tiêm chủng Blue Kids Phúc Yên',
+    description: 'Liên hệ với chúng tôi để được tư vấn và hỗ trợ về các dịch vụ tiêm chủng và chăm sóc sức khỏe cho trẻ. Chúng tôi luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc của bạn.',
+};
 
 export default function ContactPage() {
     return (

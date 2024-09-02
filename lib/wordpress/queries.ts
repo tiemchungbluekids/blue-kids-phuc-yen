@@ -12,6 +12,26 @@ export const GET_ABOUT_PAGE = gql`
           sourceUrl
         }
       }
+      seo{
+        fullHead
+      }
+    }
+  }
+`;
+
+export const GET_HOME_PAGE = gql`
+  query GetHomePage {
+    page(id: "/", idType: URI) { 
+      title
+      content
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      seo{
+        fullHead
+      }
     }
   }
 `;
@@ -59,6 +79,9 @@ export const GET_SERVICE_BY_SLUG = gql`
       schedule
       isRequired
       sideEffects
+      seo{
+        fullHead
+      }
     }
   }
 `;

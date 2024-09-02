@@ -1,11 +1,13 @@
 import { getAboutPage } from '@/lib/wordpress/api';
 import { Page } from '@/types/types'; // Import kiểu dữ liệu Page
+import FullHeadSEO from './FullHeadSEO';
 
 const AboutSection: React.FC = async () => {
   const pageData: Page | null = await getAboutPage(); // Sử dụng kiểu dữ liệu Page
 
   return (
     <section className="container mx-auto py-16">
+      {pageData && <FullHeadSEO seo={pageData.seo} />}
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
           {/* Kiểm tra pageData trước khi truy cập các thuộc tính */}

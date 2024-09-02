@@ -1,10 +1,20 @@
 import client from './client';
-import { GET_ABOUT_PAGE, GET_SERVICES, GET_SERVICE_BY_SLUG } from './queries';
+import { GET_ABOUT_PAGE, GET_HOME_PAGE, GET_SERVICES, GET_SERVICE_BY_SLUG } from './queries';
 import { Page, Service } from '@/types/types'; // Import kiểu dữ liệu Page từ types.ts
 
 export const getAboutPage = async (): Promise<Page | null> => {
   try {
     const { page }: { page: Page } = await client.request(GET_ABOUT_PAGE);
+    return page; // Ép kiểu data.page về kiểu Page
+  } catch (error) {
+    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
+    return null; // Trả về null nếu có lỗi
+  }
+};
+
+export const getHomePage = async (): Promise<Page | null> => {
+  try {
+    const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
     return page; // Ép kiểu data.page về kiểu Page
   } catch (error) {
     console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
@@ -30,6 +40,7 @@ export const getServices = async (): Promise<Service[]> => {
       imageUrl: node.featuredImage?.node?.sourceUrl || '',
       isRequired: node.isRequired || false,
       sideEffects: node.sideEffects?.split(',') || [], // Chuyển đổi chuỗi thành mảng
+      seo: node.seo,
     }));
   } catch (error) {
     console.error('Lỗi khi lấy dữ liệu dịch vụ:', error);
@@ -59,10 +70,41 @@ export const getServiceBySlug = async (slug: string): Promise<Service | null> =>
       imageUrl: service.featuredImage?.node?.sourceUrl || '',
       isRequired: service.isRequired || false,
       sideEffects: service.sideEffects?.split(',') || [],
+      seo: service.seo,
     };
     
   } catch (error) {
     console.error('Lỗi khi lấy dữ liệu dịch vụ:', error);
     return null; // Trả về null nếu có lỗi
+  }
+};
+
+export const getSitemapData = async () => {
+  const query = `
+    query GetSitemapData {
+      posts {
+        nodes {
+          slug
+          modifiedGmt
+          
+        }
+      }
+      services {
+        nodes {
+          slug
+          modifiedGmt
+          
+        }
+      }
+      # Add other content types as needed
+    }
+  `;
+
+  try {
+    const result = await client.request(query);
+    return result; // Trả về toàn bộ kết quả truy vấn
+  } catch (error) {
+    console.error('Error fetching sitemap data:', error);
+    throw error; // Hoặc bạn có thể xử lý lỗi theo cách khác, ví dụ: return null
   }
 };

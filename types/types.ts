@@ -1,5 +1,10 @@
 // types/types.ts
 
+// SEO
+export interface SEO{
+    fullHead:string
+}
+
 // Thông tin về dịch vụ tiêm chủng
 export interface Service {
   id: string;
@@ -14,6 +19,7 @@ export interface Service {
   imageUrl?: string; // Đường dẫn hình ảnh (tùy chọn)
   isRequired: boolean; // Có bắt buộc tiêm không
   sideEffects: string[]; // Các tác dụng phụ có thể xảy ra
+  seo: SEO;
 }
 
 // Thông tin khách hàng
@@ -142,6 +148,7 @@ export interface Page {
       sourceUrl?: string;
     }
   }
+  seo: SEO;
 }
 
 export interface BannerProps {

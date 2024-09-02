@@ -1,12 +1,13 @@
 // app/dich-vu/[slug]/page.tsx
 
-'use client';
 import { getServiceBySlug } from '@/lib/wordpress/api'; // Giả sử bạn đã có hàm này
 import { Service } from '@/types/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from 'flowbite-react';
 import { imageLoader } from '@/lib/imageLoader';
+import FullHeadSEO from '@/components/FullHeadSEO';
+
 
 export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
     const { slug: serviceSlug } = params;
@@ -20,6 +21,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
 
     return (
         <main className="container mx-auto py-16">
+            <FullHeadSEO seo={service?.seo} />
             <h1 className="text-3xl font-bold mb-4">{service.name}</h1>
             <Image
                 loader={imageLoader}
