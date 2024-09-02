@@ -1,6 +1,26 @@
 import client from './client';
-import { GET_ABOUT_PAGE, GET_HOME_PAGE, GET_SERVICES, GET_SERVICE_BY_SLUG } from './queries';
+import { GET_ABOUT_PAGE, GET_HOME_PAGE, GET_PAGE_BY_SLUG, GET_SERVICES, GET_SERVICE_BY_SLUG } from './queries';
 import { Page, Service } from '@/types/types'; // Import kiểu dữ liệu Page từ types.ts
+
+interface PageData{
+  page: any
+}
+
+export const getPageBySlug = async (slug: string): Promise<Page | null> => {
+  try {
+    const data: PageData = await client.request(GET_PAGE_BY_SLUG, { slug });
+    const node = data.page;
+
+    if (!node) {
+      return null; // Trả về null nếu không tìm thấy trang
+    }
+
+    return node
+  } catch (error) {
+    console.error('Lỗi khi lấy dữ liệu trang:', error);
+    return null; // Trả về null nếu có lỗi
+  }
+};
 
 export const getAboutPage = async (): Promise<Page | null> => {
   try {
@@ -13,6 +33,26 @@ export const getAboutPage = async (): Promise<Page | null> => {
 };
 
 export const getHomePage = async (): Promise<Page | null> => {
+  try {
+    const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
+    return page; // Ép kiểu data.page về kiểu Page
+  } catch (error) {
+    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
+    return null; // Trả về null nếu có lỗi
+  }
+};
+
+export const getPrivacyPolicyPage = async (): Promise<Page | null> => {
+  try {
+    const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
+    return page; // Ép kiểu data.page về kiểu Page
+  } catch (error) {
+    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
+    return null; // Trả về null nếu có lỗi
+  }
+};
+
+export const getTermsOfUsePage = async (): Promise<Page | null> => {
   try {
     const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
     return page; // Ép kiểu data.page về kiểu Page

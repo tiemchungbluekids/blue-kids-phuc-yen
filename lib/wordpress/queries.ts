@@ -2,6 +2,25 @@
 
 import { gql } from 'graphql-request';
 
+export const GET_PAGE_BY_SLUG = gql`
+  query GetPageBySlug($slug: ID!) {
+    page(id: $slug, idType: URI) {
+      id
+      title
+      content
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+      seo {
+        fullHead
+      }
+    }
+  }
+`;
+
 export const GET_ABOUT_PAGE = gql`
   query GetAboutPage {
     page(id: "gioi-thieu", idType: URI) { 

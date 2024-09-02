@@ -141,11 +141,13 @@ export interface BlogPost {
 // ... (các kiểu dữ liệu khác)
 
 export interface Page {
+  id: string;
   title: string;
   content: string;
   featuredImage?: {
     node?: {
       sourceUrl?: string;
+      altText?: string;
     }
   }
   seo: SEO;
