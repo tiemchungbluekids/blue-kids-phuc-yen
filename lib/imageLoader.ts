@@ -1,14 +1,10 @@
-// lib/imageLoader.ts
+// lib/image-loader.ts
 
-'use client'; // Đảm bảo image loader chạy ở phía client
+'use client';
 import { ImageLoaderProps } from "next/image";
 
 export const imageLoader = ({ src, width }: ImageLoaderProps): string => {
-  // Xử lý URL hình ảnh, loại bỏ "https://" và thêm vào URL cơ sở của dịch vụ xử lý ảnh
-  const processedSrc = `https://i0.wp.com/${src.substring(8)}`; 
-
-  // Xây dựng URL cuối cùng với các tham số truy vấn
-  const finalUrl = `${processedSrc}?fit=${width}%2C${width}&ssl=1`; 
-
-  return finalUrl;
+  // Logic xử lý hình ảnh ở đây
+  // Ví dụ: sử dụng dịch vụ CDN hoặc xử lý trực tiếp trên server của bạn
+  return `https://i0.wp.com/${src.substring(8)}?fit=${width}%2C${width}&ssl=1`;
 };

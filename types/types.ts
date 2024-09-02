@@ -4,7 +4,9 @@
 export interface Service {
   id: string;
   name: string;
+  slug: string;
   description: string;
+  benefits: string[];
   price: number;
   ageGroup: string; // Nhóm tuổi phù hợp
   vaccineType: string; // Loại vắc-xin
@@ -153,3 +155,4 @@ export interface AboutSectionProps {
   content: string; // Nội dung HTML của phần giới thiệu
   imageUrl: string; // Đường dẫn đến hình ảnh minh họa
 }
+
