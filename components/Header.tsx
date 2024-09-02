@@ -3,7 +3,7 @@ import { Button, DarkThemeToggle, Navbar, NavbarBrand, NavbarCollapse, NavbarLin
 
 const Header = () => {
   return (
-    <header className="bg-green-500 shadow-md dark:bg-gray-800">
+    <header className="bg-blue-kids-secondary shadow-md dark:bg-gray-800">
       <Navbar fluid rounded>
         <NavbarBrand as={Link} href="/">
           <img
@@ -11,14 +11,14 @@ const Header = () => {
             className="mr-3 h-6 sm:h-9"
             alt="Blue Kids Logo"
           />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-xl font-semibold text-blue-kids-primary dark:text-white">
             Blue Kids
           </span>
         </NavbarBrand>
         <div className="flex md:order-2">
           <DarkThemeToggle />
           <Link href="/dat-lich"> {/* Thay đổi thành liên kết "Đặt lịch ngay" */}
-            <Button>Đặt lịch ngay</Button>
+            <Button color="blue" className='dark:text-white'>Đặt lịch ngay</Button>
           </Link>
           <NavbarToggle />
         </div>

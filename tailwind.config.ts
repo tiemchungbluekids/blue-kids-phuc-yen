@@ -9,7 +9,12 @@ const config: Config = {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-kids-primary': '#2D85DE', // Xanh dương
+        'blue-kids-secondary': '#35d461', // Xanh lá cây
+      },
+    },
   },
   plugins: [flowbite.plugin()],
 };
