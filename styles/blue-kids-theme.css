@@ -1,0 +1,23 @@
+/* styles/blue-kids-theme.css */
+
+:root {
+    --primary: #2D85DE;
+    /* Xanh dương chủ đạo */
+    --secondary: #35d461;
+    /* Xanh lá cây */
+    --accent: #facc15;
+    /* Màu nhấn (ví dụ: vàng) - bạn có thể điều chỉnh nếu muốn */
+    --gray: #6b7280;
+    /* Màu xám trung tính */
+}
+
+.dark {
+    --primary: #FFFFFF;
+    /* Màu xanh dương nhạt hơn cho chế độ tối */
+    --secondary: #22c55e;
+    /* Màu xanh lá cây đậm hơn cho chế độ tối */
+    --accent: #eab308;
+    /* Màu nhấn đậm hơn cho chế độ tối */
+    --gray: #e5e7eb;
+    /* Màu xám nhạt hơn cho chế độ tối */
+}

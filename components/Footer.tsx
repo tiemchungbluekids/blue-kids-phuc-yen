@@ -3,7 +3,7 @@ import { BsFacebook } from "react-icons/bs";
 
 const MyFooter = () => {
   return (
-    <Footer container={true} className="bg-gray-800 dark:bg-gray-900 text-white">
+    <Footer container={true} className="bg-blue-kids-primary text-white dark:bg-gray-800">
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>

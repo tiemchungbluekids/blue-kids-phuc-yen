@@ -1,9 +1,9 @@
-import { getAboutPage } from '@/lib/wordpress/api';
+import { getPageBySlug } from '@/lib/wordpress/api';
 import { Page } from '@/types/types'; // Import kiểu dữ liệu Page
 import FullHeadSEO from './FullHeadSEO';
 
 const AboutSection: React.FC = async () => {
-  const pageData: Page | null = await getAboutPage(); // Sử dụng kiểu dữ liệu Page
+  const pageData: Page | null = await getPageBySlug("gioi-thieu"); // Sử dụng kiểu dữ liệu Page
 
   return (
     <section className="container mx-auto py-16">
