@@ -16,12 +16,13 @@ export const getAboutPage = async (): Promise<Page | null> => {
 
 export const getServices = async (): Promise<Service[]> => {
   try {
-    const { services }: { services: { nodes: Service[] } } = await client.request(GET_SERVICES);
+    const { services }: { services: { nodes: any[] } } = await client.request(GET_SERVICES);
     return services.nodes.map((node: any) => ({
       id: node.id,
       name: node.title,
       slug: node.slug,
       description: node.content,
+      benefits: node.benefits?.split('\r\n') || [],
       price: parseFloat(node.price) || 0, // Chuyển đổi giá thành số, mặc định là 0 nếu không có
       ageGroup: node.ageGroup || '',
       vaccineType: node.vaccineType || '',
