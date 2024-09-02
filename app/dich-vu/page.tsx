@@ -2,7 +2,6 @@
 
 import { Metadata } from 'next';
 import { getServices } from '@/lib/wordpress/api';
-import { Service } from '@/types/types';
 import ServiceCard from '@/components/ServiceCard';
 import Link from 'next/link';
 import { Button } from 'flowbite-react';

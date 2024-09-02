@@ -1,6 +1,6 @@
 import client from './client';
-import { GET_ABOUT_PAGE, GET_HOME_PAGE, GET_PAGE_BY_SLUG, GET_SERVICES, GET_SERVICE_BY_SLUG } from './queries';
-import { Page, Service } from '@/types/types'; // Import kiểu dữ liệu Page từ types.ts
+import {  GET_FAQS, GET_PAGE_BY_SLUG, GET_SERVICES, GET_SERVICE_BY_SLUG } from './queries';
+import { FAQ, FAQsData, Page, Service } from '@/types/types'; // Import kiểu dữ liệu Page từ types.ts
 
 interface PageData{
   page: any
@@ -22,43 +22,17 @@ export const getPageBySlug = async (slug: string): Promise<Page | null> => {
   }
 };
 
-export const getAboutPage = async (): Promise<Page | null> => {
+export const getFAQs = async (): Promise<FAQ[]> => {
   try {
-    const { page }: { page: Page } = await client.request(GET_ABOUT_PAGE);
-    return page; // Ép kiểu data.page về kiểu Page
+    const data: FAQsData = await client.request(GET_FAQS); // Khai báo kiểu dữ liệu cho data
+    return data.faqs.edges.map((edge) => ({ 
+      id: edge.node.id,
+      question: edge.node.title,
+      answer: edge.node.content,
+    }));
   } catch (error) {
-    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
-    return null; // Trả về null nếu có lỗi
-  }
-};
-
-export const getHomePage = async (): Promise<Page | null> => {
-  try {
-    const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
-    return page; // Ép kiểu data.page về kiểu Page
-  } catch (error) {
-    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
-    return null; // Trả về null nếu có lỗi
-  }
-};
-
-export const getPrivacyPolicyPage = async (): Promise<Page | null> => {
-  try {
-    const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
-    return page; // Ép kiểu data.page về kiểu Page
-  } catch (error) {
-    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
-    return null; // Trả về null nếu có lỗi
-  }
-};
-
-export const getTermsOfUsePage = async (): Promise<Page | null> => {
-  try {
-    const { page }: { page: Page } = await client.request(GET_HOME_PAGE);
-    return page; // Ép kiểu data.page về kiểu Page
-  } catch (error) {
-    console.error('Lỗi khi lấy dữ liệu trang Giới thiệu:', error);
-    return null; // Trả về null nếu có lỗi
+    console.error('Lỗi khi lấy dữ liệu câu hỏi thường gặp:', error);
+    return []; 
   }
 };
 
@@ -96,7 +70,7 @@ export const getServiceBySlug = async (slug: string): Promise<Service | null> =>
     if (!service) {
       return null; // Trả về null nếu không tìm thấy dịch vụ
     }
-    console.log(service)
+
     return {
       id: service.id,
       name: service.title,

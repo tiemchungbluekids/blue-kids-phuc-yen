@@ -1,9 +1,9 @@
 // app/cau-hoi-thuong-gap/page.tsx
 
 import { Metadata } from 'next';
-import { Accordion } from 'flowbite-react';
-// import { getFAQs } from '@/lib/wordpress/api'; 
-// import { FAQ } from '@/types/types'; 
+import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
+import { FAQ } from '@/types/types';
+import { getFAQs } from '@/lib/wordpress/api';
 
 export const metadata: Metadata = {
   title: 'Câu hỏi thường gặp - Blue Kids Phúc Yên',
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default async function FAQPage() {
-//   const faqs: FAQ[] = await getFAQs();
+  const faqs: FAQ[] = await getFAQs();
+  
 
   return (
     <main className="container mx-auto py-16">
@@ -19,14 +20,20 @@ export default async function FAQPage() {
       <p className="text-lg mb-8">
         Bạn có câu hỏi về tiêm chủng hoặc dịch vụ của chúng tôi? Hãy xem qua danh sách các câu hỏi thường gặp dưới đây. Nếu bạn không tìm thấy câu trả lời mình cần, vui lòng liên hệ với chúng tôi để được hỗ trợ.
       </p>
-
-      {/* <Accordion>
+      <Accordion>
         {faqs.map((faq) => (
-          <Accordion.Item key={faq.id} title={faq.question}>
-            <div dangerouslySetInnerHTML={{ __html: faq.answer }} /> 
-          </Accordion.Item>
+          <AccordionPanel key={faq.id}>
+            <AccordionTitle>
+              {faq.question}
+            </AccordionTitle>
+            {/* <AccordionContent dangerouslySetInnerHTML={{ __html: faq.answer }} /> */}
+            <AccordionContent>
+              <div className="mb-2 text-gray-500 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+            </AccordionContent>
+          </AccordionPanel>
         ))}
-      </Accordion> */}
+      </Accordion>
+
     </main>
   );
 }

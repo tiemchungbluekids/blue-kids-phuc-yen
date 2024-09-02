@@ -21,35 +21,15 @@ export const GET_PAGE_BY_SLUG = gql`
   }
 `;
 
-export const GET_ABOUT_PAGE = gql`
-  query GetAboutPage {
-    page(id: "gioi-thieu", idType: URI) { 
-      title
-      content
-      featuredImage {
+export const GET_FAQS = gql`
+  query GetFAQs {
+    faqs {
+      edges {
         node {
-          sourceUrl
+          id
+          title
+          content(format:RENDERED)
         }
-      }
-      seo{
-        fullHead
-      }
-    }
-  }
-`;
-
-export const GET_HOME_PAGE = gql`
-  query GetHomePage {
-    page(id: "/", idType: URI) { 
-      title
-      content
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      seo{
-        fullHead
       }
     }
   }

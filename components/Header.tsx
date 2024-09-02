@@ -3,7 +3,7 @@ import { Button, DarkThemeToggle, Navbar, NavbarBrand, NavbarCollapse, NavbarLin
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-green-500 shadow-md dark:bg-gray-800">
       <Navbar fluid rounded>
         <NavbarBrand as={Link} href="/">
           <img

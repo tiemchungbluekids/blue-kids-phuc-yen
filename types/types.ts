@@ -5,6 +5,26 @@ export interface SEO{
     fullHead:string
 }
 
+export interface FAQ {
+  id: string;         // ID duy nhất của câu hỏi thường gặp
+  question: string;    // Nội dung câu hỏi
+  answer: string;      // Câu trả lời (có thể chứa HTML)
+}
+
+export interface FAQEdge {
+  node: {
+    id: string;
+    title: string;
+    content: string;
+  }
+}
+
+export interface FAQsData {
+  faqs: {
+    edges: FAQEdge[];
+  }
+}
+
 // Thông tin về dịch vụ tiêm chủng
 export interface Service {
   id: string;
