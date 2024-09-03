@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <main className="container mx-auto py-16">
-            <h1 className="text-3xl font-bold mb-4">Liên hệ với Blue Kids Phúc Yên</h1>
+            <h1 className="text-3xl font-bold mb-4 text-blue-kids-primary dark:text-white">Liên hệ với Blue Kids Phúc Yên</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 dark:text-white">
                 <div>
-                    <h2 className="text-2xl font-semibold mb-4">Thông tin liên hệ</h2>
+                    <h2 className="text-2xl font-semibold mb-4 text-blue-kids-primary">Thông tin liên hệ</h2>
                     <p className="mb-2">
                         <span className="font-bold">Địa chỉ:</span> 407 Đ. Hai Bà Trưng, Tiền Châu, Phúc Yên, Vĩnh Phúc, Việt Nam
                     </p>
@@ -35,13 +35,13 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                    <h2 className="text-2xl font-semibold mb-4">Gửi tin nhắn cho chúng tôi</h2>
+                    <h2 className="text-2xl font-semibold mb-4 text-blue-kids-primary">Gửi tin nhắn cho chúng tôi</h2>
                     <ContactForm />
                     <p className="mt-4 text-green-500">{/* Hiển thị thông báo thành công sau khi gửi form */}</p>
                 </div>
             </div>
 
-            <p className="mt-8">Cảm ơn bạn đã liên hệ với Blue Kids Phúc Yên. Chúng tôi sẽ phản hồi sớm nhất có thể!</p>
+            <p className="mt-8 dark:text-white">Cảm ơn bạn đã liên hệ với Blue Kids Phúc Yên. Chúng tôi sẽ phản hồi sớm nhất có thể!</p>
         </main>
     );
 }

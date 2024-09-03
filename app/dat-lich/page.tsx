@@ -3,7 +3,7 @@
 export default function DatLichPage() {
   return (
     <main className="container mx-auto py-16">
-      <h1 className="text-3xl font-bold mb-4">Đặt lịch tiêm chủng tại Blue Kids Phúc Yên</h1>
+      <h1 className="text-3xl font-bold mb-4 text-blue-kids-primary">Đặt lịch tiêm chủng tại Blue Kids Phúc Yên</h1>
       <p className="text-lg mb-8">
         Vui lòng điền vào mẫu đơn đặt lịch bên dưới để chúng tôi có thể liên hệ với bạn và xác nhận lịch hẹn của bạn.
       </p>

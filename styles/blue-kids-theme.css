@@ -9,6 +9,10 @@
     /* Màu nhấn (ví dụ: vàng) - bạn có thể điều chỉnh nếu muốn */
     --gray: #6b7280;
     /* Màu xám trung tính */
+    --white: #ffffff;
+    /* Màu trắng */
+    --black: #000000;
+    /* Màu đen */
 }
 
 .dark {
@@ -20,4 +24,9 @@
     /* Màu nhấn đậm hơn cho chế độ tối */
     --gray: #e5e7eb;
     /* Màu xám nhạt hơn cho chế độ tối */
+    --white: #000000;
+    /* Màu đen */
+    --black: #ffffff;
+    /* Màu trắng */
 }
+

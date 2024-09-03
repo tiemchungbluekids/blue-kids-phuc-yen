@@ -16,7 +16,7 @@ export default async function FAQPage() {
 
   return (
     <main className="container mx-auto py-16">
-      <h1 className="text-3xl font-bold mb-4">Câu hỏi thường gặp</h1>
+      <h1 className="text-3xl font-bold mb-4 text-blue-kids-primary">Câu hỏi thường gặp</h1>
       <p className="text-lg mb-8">
         Bạn có câu hỏi về tiêm chủng hoặc dịch vụ của chúng tôi? Hãy xem qua danh sách các câu hỏi thường gặp dưới đây. Nếu bạn không tìm thấy câu trả lời mình cần, vui lòng liên hệ với chúng tôi để được hỗ trợ.
       </p>

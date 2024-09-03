@@ -22,7 +22,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         />
       </div>
       <div className="p-5">
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="text-2xl font-bold tracking-tight text-blue-kids-primary">
           {service.name}
         </h5>
         <div className="font-normal text-gray-700 dark:text-gray-400 mb-3" dangerouslySetInnerHTML={{__html: service.description}} />
@@ -41,7 +41,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             {service.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
           </span>
           <Link href={`/dich-vu/${service.slug}`}>
-            <Button gradientDuoTone="cyanToBlue">
+            <Button gradientDuoTone="greenToBlue">
               Xem chi tiết
             </Button>
           </Link>

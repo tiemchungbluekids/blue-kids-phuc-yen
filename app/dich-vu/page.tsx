@@ -16,7 +16,7 @@ export default async function ServicesPage() {
 
   return (
     <main className="container mx-auto py-16">
-      <h1 className="text-3xl font-bold mb-4">Các dịch vụ tiêm chủng và chăm sóc sức khỏe tại Blue Kids Phúc Yên</h1>
+      <h1 className="text-3xl font-bold mb-4 text-blue-kids-primary">Các dịch vụ tiêm chủng và chăm sóc sức khỏe tại Blue Kids Phúc Yên</h1>
       <p className="text-lg mb-8">
         Tại Blue Kids, chúng tôi mang đến cho con bạn sự chăm sóc toàn diện với các dịch vụ tiêm chủng đa dạng, đảm bảo an toàn và hiệu quả.
       </p>

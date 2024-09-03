@@ -22,7 +22,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
     return (
         <main className="container mx-auto py-16">
             <FullHeadSEO seo={service?.seo} />
-            <h1 className="text-3xl font-bold mb-4">{service.name}</h1>
+            <h1 className="text-3xl font-bold mb-4 text-blue-kids-primary">{service.name}</h1>
             <Image
                 loader={imageLoader}
                 src={service.imageUrl || '/images/default-service.jpg'}

@@ -3,12 +3,12 @@ import { BsFacebook } from "react-icons/bs";
 
 const MyFooter = () => {
   return (
-    <Footer container={true} className="bg-blue-kids-primary text-white dark:bg-gray-800">
+    <Footer container={true} className="dark:bg-gray-800">
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand
-              href="/" 
+              href="/"
               src="/logo.png" // Thay thế bằng đường dẫn tới logo của Blue Kids
               alt="Blue Kids Logo"
               name="Blue Kids"
@@ -58,20 +58,20 @@ const MyFooter = () => {
         </div>
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
-         <div>
-         <Footer.Copyright
-            href="/"
-            by="Blue Kids™"
-            year={new Date().getFullYear()} 
-            theme={{base: "Long Web Studio", href: "https://longwebstudio.net/", span: "Long Web Studio"}}
-          /> Thiết kế bởi <a target="_blank" href="https://longwebstudio.net/">Long Web Studio</a>
-         </div>
+          <div>
+            <Footer.Copyright
+              href="/"
+              by="Blue Kids™"
+              year={new Date().getFullYear()}
+              theme={{ base: "Long Web Studio", href: "https://longwebstudio.net/", span: "Long Web Studio" }}
+            /> Thiết kế bởi <a target="_blank" href="https://longwebstudio.net/">Long Web Studio</a>
+          </div>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon
               href="https://www.facebook.com/TiemchungBLK"
               icon={BsFacebook}
             />
-            
+
             {/* Thêm các biểu tượng mạng xã hội khác nếu cần */}
           </div>
         </div>

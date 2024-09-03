@@ -21,7 +21,7 @@ export default async function PageBySlug({ params }: { params: { slug: string } 
   return (
     <main className="container mx-auto py-16">
       <FullHeadSEO seo={pageData.seo} /> 
-      <h1 className="text-3xl font-bold mb-4">{pageData.title}</h1>
+      <h1 className="text-3xl font-bold mb-4 text-blue-kids-primary">{pageData.title}</h1>
       {pageData.featuredImage && (
         <div className="relative w-full h-[400px] mb-4 rounded-md overflow-hidden">
           <Image

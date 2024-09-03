@@ -16,7 +16,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +24,29 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+/* Tùy chỉnh một số thành phần Flowbite */
+.dark .navbar {
+  @apply bg-gray-900; /* Màu nền navbar trong dark mode */
+}
+
+.dark .btn {
+  @apply bg-primary hover:bg-blue-600 focus:ring-blue-800; /* Màu nút trong dark mode */
+}
+
+.dark .card {
+  @apply bg-gray-800; /* Màu nền card trong dark mode */
+}
+
+/* Tùy chỉnh màu sắc cho các thành phần khác */
+body {
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-blue-kids-primary; 
+}
+
+a {
+  @apply text-blue-kids-primary hover:text-blue-600; 
 }

@@ -2,6 +2,7 @@ import flowbite from "flowbite-react/tailwind";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,9 +16,10 @@ const config: Config = {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         accent: 'var(--accent)',
-        gray: 'var(--gray)',
-        'blue-kids-primary': '#2D85DE', // Xanh dương
+        // gray: 'var(--gray)',
+        'blue-kids-primary': '#2D85DE', // Xanh dương chủ đạo
         'blue-kids-secondary': '#35d461', // Xanh lá cây
+        'blue-kids-accent': '#facc15', // Màu nhấn (có thể điều chỉnh)
       },
     },
   },

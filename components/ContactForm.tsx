@@ -124,7 +124,7 @@ const ContactForm: React.FC = () => {
                 <input type="text" name="b_90504fa1f9ee6d1b575d6025f_3ce3391f2a" tabIndex={-1} defaultValue="" />
             </div>
 
-            <Button type="submit">Đăng ký</Button>
+            <Button type="submit" color="blue">Đăng ký</Button>
 
             {/* Hiển thị thông báo thành công hoặc lỗi */}
             {isSuccess && <p className="mt-4 text-green-500">Cảm ơn bạn đã đăng ký!</p>}
